@@ -48,17 +48,21 @@
         const elIdFrom = document.querySelector('[id="from"]');
 
         const inputChange = (e) => { e.target.nextElementSibling.innerText = e.target.value; console.log(e); }
+
         elIdFrom.addEventListener('input', inputChange);
 
         // 2. При клике на кнопку с классом messageBtn необходимо элементу с классом message:
         // - добавить два класса: animate_animated и animate_fadeInLeftBig
         // - поставить данному элементу стиль visibility в значение 'visible'.
         const elMessageBtn = document.querySelector(".messageBtn");
+
         const elMessageBtnClick = (e) => {
             const elMessage = document.querySelector(".message")
+            
             elMessage.classList.add("animate_animated", "animate_fadeInLeftBig")
             elMessage.style.visibility = "visible"
         }
+
         elMessageBtn.addEventListener('click', elMessageBtnClick)
 
         // 3. Необходимо при отправке формы проверить, заполнены ли все поля в этой форме. Если какое-либо поле не заполнено, форма не должна отправляться, также должны быть подсвечены незаполненные поля (необходимо поставить класс error незаполненным полям). Как только пользователь начинает заполнять какое-либо поле, необходимо, при вводе в данное поле, произвести проверку:
